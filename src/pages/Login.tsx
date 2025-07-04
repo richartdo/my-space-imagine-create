@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
+import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
 const Login = () => {
@@ -13,17 +14,26 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate login process - in real app, this would connect to Supabase
-    setTimeout(() => {
-      toast.success("Login successful! Welcome back!");
-      navigate("/dashboard");
+    try {
+      const { error } = await signIn(email, password);
+      
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success("Login successful! Welcome back!");
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      toast.error("An error occurred during login");
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (

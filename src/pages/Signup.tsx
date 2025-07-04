@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
+import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
 const Signup = () => {
@@ -14,17 +15,26 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signUp } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate signup process - in real app, this would connect to Supabase
-    setTimeout(() => {
-      toast.success("Account created successfully! Welcome to Design Me!");
-      navigate("/dashboard");
+    try {
+      const { error } = await signUp(email, password, fullName);
+      
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success("Account created successfully! Please check your email to verify your account.");
+        navigate("/login");
+      }
+    } catch (error) {
+      toast.error("An error occurred during signup");
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
