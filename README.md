@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# 🏗️ Design Me
 
-## Project info
+**Design Me** is a full-stack interior design platform that helps users visualize and plan the design of various spaces — including homes, hospitals, classrooms, shops, garages, student bedsitters, compounds, offices, events (tent arrangements), and many more.
 
-**URL**: https://lovable.dev/projects/837e8c68-ddb7-4ab5-8dde-921b25c0cca1
+---
 
-## How can I edit this code?
+## 🧩 What is Design Me?
 
-There are several ways of editing your application.
+Design Me is an interactive web application where users can:
 
-**Use Lovable**
+- Select a design category (e.g., kitchen, classroom, event)
+- Upload a photo or blueprint of the space
+- Use design tools to drag, drop, replace, and color items
+- Store and revisit past designs
+- Apply design proposals from other users or AI suggestions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/837e8c68-ddb7-4ab5-8dde-921b25c0cca1) and start prompting.
+This system enables anyone — from students in small university rooms to professional decorators — to easily prototype interior layouts before committing resources.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 How It Helps
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 🧱 Helps users pre-plan space arrangement
+- 🛠️ Enables furniture/tool customization
+- 🎨 Allows color editing and item replacement
+- 💡 Offers design proposals and inspiration
+- 🗂️ Saves work in the cloud for future editing
+- 👥 Supports multi-type spaces — from bedsitters to city planning
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 📛 Project Name
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Design Me** — Interior & Spatial Design for Everyone
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## ⚙️ How It Works
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. User signs up or logs in
+2. Selects a category of space to design
+3. Uploads an image or layout (blueprint, photo)
+4. Uses the design editor to:
+   - Add furniture/items
+   - Change colors
+   - Replace objects
+   - Get design proposals
+5. Saves the design in their dashboard
+6. Re-visits, edits, or exports the design anytime
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🧰 Tools & Technologies Used
 
-**Use GitHub Codespaces**
+| Layer        | Tools/Tech                          |
+|--------------|--------------------------------------|
+| Frontend     | [Lovable](https://lovable.so), React (optional), TailwindCSS |
+| Backend      | [Supabase](https://supabase.com) (Auth, Database, Storage) |
+| Database     | PostgreSQL via Supabase             |
+| Storage      | Supabase Storage (for uploaded images) |
+| Auth         | Supabase Auth                       |
+| Design Logic | Canvas API, Fabric.js or custom drag-drop |
+| Hosting      | Vercel, Netlify, or Lovable deploy  |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🏁 How to Run It
 
-This project is built with:
+### 1. Clone or Create Frontend Project
+If you're using Lovable:
+- Open [Lovable.so](https://lovable.so)
+- Create a new app: `Design Me`
+- Paste the prompt and link your Supabase backend
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/837e8c68-ddb7-4ab5-8dde-921b25c0cca1) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+For a custom React app:
+```bash
+npx create-react-app design-me
+cd design-me
+npm install @supabase/supabase-js
