@@ -1,4 +1,4 @@
-# 🏗️ Design Me
+# 🏗️ [Design Me](https://my-space-imagine-create.vercel.app/)
 
 **Design Me** is a full-stack interior design platform that helps users visualize and plan the design of various spaces — including homes, hospitals, classrooms, shops, garages, student bedsitters, compounds, offices, events (tent arrangements), and many more.
 
@@ -68,7 +68,7 @@ This system enables anyone — from students in small university rooms to profes
 
 ### 1. Clone or Create Frontend Project
 If you're using Lovable:
-- Open [Lovable.so](https://lovable.so)
+- Open [Lovable.so](https://my-space-imagine-create.vercel.app/)
 - Create a new app: `Design Me`
 - Paste the prompt and link your Supabase backend
 
