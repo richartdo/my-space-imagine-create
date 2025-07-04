@@ -93,6 +93,7 @@ const DesignStudio = () => {
       const dataURL = fabricCanvas.toDataURL({
         format: 'png',
         quality: 1,
+        multiplier: 1,
       });
       const link = document.createElement('a');
       link.download = `design-${Date.now()}.png`;

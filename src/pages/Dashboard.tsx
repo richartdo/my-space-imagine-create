@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
-import { Plus, Edit, Trash2, Share, Download } from "lucide-react";
+import { Plus, Edit, Trash2, Share, Download, Search, Upload } from "lucide-react";
 
 const Dashboard = () => {
   const [designs] = useState([
